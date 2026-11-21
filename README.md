@@ -54,3 +54,8 @@ Le port par défaut est 5000. On peut en choisir un autre : `sudo ./myserver 600
 | Bouton (vers la masse) | 26 |
 
 Les numéros se modifient dans `bsp/bsp.c` (LEDs) et `bsp/bsp.h` (bouton).
+
+## Ma contribution
+
+- **Serveur TCP** : création de la socket d'écoute (`socket`, `bind` sur le port 5000, `listen`), puis boucle d'attente des clients avec `accept`, qui ouvre une socket dédiée à chaque client
+- **Client TCP** : connexion au serveur à partir de son adresse IP (`socket`, `inet_pton`, `connect`), avec gestion des erreurs de connexion
